@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-страница</title>
+    </head>
+    <body>
+        <form action="index.php" method="GET">
+            <input name="number" type="number" placeholder="Вводите число, я отгадаю" />
+            <button type="submit">Отгадать число!</button>
+        </form>
+    </body>
+</html>
+
+<!--
+    <?php
+$todaydate = date ('m',time() ) . "-" . date("d",time() ) . "-" . date("y",time() );
+
+    error_reporting(E_ALL ^ E_WARNING);
+
+    $number = $_GET['number'];
+    $x = 4 + $number;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web-страница</title>
+    </head>
+    <body>
+        <p>А сегодня у нас <?php echo $todaydate,"<br>"; ?></p>
+        <form action="index.php" method="GET">
+            <input name="number" type="number" placeholder="Вводите число, я отгадаю" />
+            <button type="submit">Отгадать число!</button>
+        </form>
+        <p><?php echo "ответ будет ", $x; ?></p>
+    </body>
+</html>
+
+-->
