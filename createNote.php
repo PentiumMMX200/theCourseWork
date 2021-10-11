@@ -12,7 +12,7 @@ if($_POST["title"] && $_POST["content"] && !$_POST["action"]) {
     $id = $id->fetchAll(PDO::FETCH_DEFAULT)[0]['count(*)'];
 
     $insertion = $db->prepare("INSERT INTO notes (ID, title, content) VALUES (:id, :title, :content)");
-    $insertion->execute(array(":id"=>$id, ":title"=>$title, ":content"=>$content));
+    $insertion->execute(array(":id"=>$id+1, ":title"=>$title, ":content"=>$content));
 }
 header('Location:index.php');
   exit;

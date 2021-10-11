@@ -5,7 +5,7 @@ function printNote($note) {
     echo "<form action='/modifyNote.php' method='POST'><div class='note'>";
     echo "<h2 class='note_title'>", $note["title"], "</h2>";
     echo "<p class='note_content'>", $note["content"], "</p>";
-    echo "<button class='edit_note' name='action' value='edit' type='submit'>&#9998;</button>";
+    echo "<div class='edit_note' name='action' value='edit' id='editButton' type=''>&#9998;</div>";
     echo "<button class='delete_note' name='action' value='delete' type='submit'>&times;</button>";
     echo "<input name='id' value='", $note["ID"], "' hidden></div></form>";
 }
@@ -41,6 +41,9 @@ $notes = $notes->fetchAll(PDO::FETCH_DEFAULT);
                 }
                 ?>
             </div>
+                <form id="editArea" style="display: none;">
+                    <input type="text">
+                </form>
         </div>
     </body>
     <script src="script.js"></script>

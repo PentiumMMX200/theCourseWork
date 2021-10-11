@@ -1,13 +1,10 @@
-function happybrthd(str) {
-    let steps = [];
-
-    steps.push(`%c %c %c ${str} `);
-    steps.push(`background: #00416a; line-height: 26px;`);
-    steps.push(`background: #00416a; line-height: 26px;`);
-    steps.push(`background: #00416a; line-height: 26px; color: #fefefe;`);
-
-
-    window.console.log.apply(console, steps);
+window.onload = function () {
+  document.getElementById('editButton').onclick = function () {
+  if(document.getElementById('editArea').style.display == 'none') {
+document.getElementById('editArea').style.display = 'block'
+  } else {
+document.getElementById('editArea').style.display = 'none'
   }
+};
 
-  happybrthd("С днём рождения, Паша!");
+};
