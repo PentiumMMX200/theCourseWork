@@ -5,8 +5,8 @@ function printNote($note) {
     echo "<form action='/modifyNote.php' method='POST'><div class='note'>";
     echo "<h2 class='note_title'>", $note["title"], "</h2>";
     echo "<p class='note_content'>", $note["content"], "</p>";
-    echo "<div class='edit_note' name='action' value='edit' id='editButton' type=''>&#9998;</div>";
-    echo "<button class='delete_note' name='action' value='delete' type='submit'>&times;</button>";
+    echo "<button class='edit_note' name='action' value='edit' title='Редактировать' type=''>&#9998;</button>";
+    echo "<button class='delete_note' name='action' value='delete' title='Удалить' type='submit'>&times;</button>";
     echo "<input name='id' value='", $note["ID"], "' hidden></div></form>";
 }
 
@@ -25,7 +25,7 @@ $notes = $notes->fetchAll(PDO::FETCH_DEFAULT);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-                <title>Web-страница</title>
+                <title>Зелёный сайт. Запомним всё!</title>
     </head>
     <body>
         <div id="container">
@@ -40,10 +40,14 @@ $notes = $notes->fetchAll(PDO::FETCH_DEFAULT);
                     printNote($note);
                 }
                 ?>
-            </div>
-                <form id="editArea" style="display: none;">
-                    <input type="text">
+                <form id="editArea" style="display: none;" action="/modifyNote.php" method="POST">
+                    <input id="title" name="title" type="text" autocomplete="off">
+                    <textarea id="content" name="content"></textarea>
+                    <button id="saveEdit" type="submit" name="action" value="edit">Сохранить изменения</button>
+                    <button id="close" type="submit" name="close" value="close">Закрыть</button>
+                    <input name='id' value='' hidden>
                 </form>
+            </div>
         </div>
     </body>
     <script src="script.js"></script>
